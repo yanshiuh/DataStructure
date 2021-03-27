@@ -1,0 +1,2 @@
+The output is AB.
+This is because Java runtime will run own constructor or method first if the base class did not consist any constructor.

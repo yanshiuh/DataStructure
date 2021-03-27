@@ -1,0 +1,9 @@
+The output is
+(1)	Performs Person's tasks
+(2)	Invoke Employee's overloaded constructor
+(3)	Performs Employee's tasks
+(4)	Performs Faculty's tasks
+
+The reasons are
+-	Whenever calling a class, Java runtime will run the constructor of the base class first instead of the own constructor.
+-	Hence, when calling Faculty class, it will forward to its base class, Employee, then Person class which is the base class of Employee.

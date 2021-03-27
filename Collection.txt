@@ -1,0 +1,44 @@
+Characteristics of each type of collection:
+
+1. List
+- stores elements by insertion order (end / specific position)
+- allow adding, retrieving, modifying, removing elements by index
+- allow null & duplicate elements
+- 2 implementations
+  i. ArrayList
+  ii. LinkedList
+
+2. Map
+- not a true collection as it doesn't extend Collection interface
+- cannot contain duplicate keys
+- each key can only map to at most one value
+- some allow null key and null value(HashMap & LinkedListMap) but some does not(TreeMap)
+- due to it is not a collection, so we have to iterate map using collection view
+  For exmaple: turn Map to Set / iterate over values
+- non thread-safe, so have to synchronize Map
+- 3 implementations
+  i. HashMap 
+     - use when order does not matter and nulss are acceptable
+     - does not impose any order on its key-value elements.
+  ii. LinkedHashMap - use when want a Map with its key-value pairs are sorted by insertion order
+  iii. TreeMap - use when want a Map sorts its key-value pairs by natural order of keys or custom order
+
+3. Queue / Deque
+- allow duplicate elements
+
+
+4. Set
+- duplication is not allowed
+- elements are not stored in order
+- use when want to store elements distinctly without duplication
+  and don't care about the order of elements
+- Implementation
+   i. HashSet
+   - no duplication & no order
+   - use when ordering doesn't matter
+   ii. LinkedHashSet
+   - order the elements based on insertion order
+   - use when want to store unique elements in order
+   iii. TreeSet
+   - order the elements based on the values or natural ordering
+   - use when want to order elements by values
