@@ -19,7 +19,6 @@ public class CashRegister extends Dispenser {
     }
 
     public double getChange(Dispenser currentItem) {
-        double change;
         if (customerMoney > currentItem.getPriceItem()) {
             change = customerMoney - currentItem.getPriceItem();
             totalMoney = totalMoney + customerMoney - change;
