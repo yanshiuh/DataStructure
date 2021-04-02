@@ -35,8 +35,11 @@ public class Generic_method {
 
     public static <E extends Comparable<E>> void maximum(E num_1, E num_2, E num_3) {
         E max = num_1;
-        if (num_2.compareTo(max) > 0) max = num_2;
-        else if (num_3.compareTo(max) > 0) max = num_3;
+
+        if (num_2.compareTo(max) > 0)
+            max = num_2;
+        else if (num_3.compareTo(max) > 0)
+            max = num_3;
 
         System.out.println("The maximum value of " + num_1 + " " + num_2 + " " + num_3 + " is " + max);
     }

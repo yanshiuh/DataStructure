@@ -14,9 +14,10 @@ public class ArrayBagDemo {
     private static void displayBag(BagInterface<String> aBag) {
         System.out.println("The bag contains " + aBag.getCurrentSize() + " string(s), as follows: ");
         // String[] items = aBag.toArray();  // this will throw ClassCastException
-        Object[] items = aBag.toArray();  // aBag.toArray() return Object, can't case to String
+        Object[] items = aBag.toArray();  // aBag.toArray() return T, after erasure will become Object
         for (Object item : items)
             System.out.print(item + " ");
+        System.out.println();
     }
 
     public static void main(String[] args) {
@@ -29,22 +30,18 @@ public class ArrayBagDemo {
         System.out.println("bag1: ");
         testAdd(bag1, contentsOfBag1);
         displayBag(bag1);
-        System.out.println();
 
         System.out.println("\nbag2: ");
         testAdd(bag2, contentsOfBag2);
         displayBag(bag2);
-        System.out.println();
 
         System.out.println("\nbag3, test the method union of bag1 and bag2:");
         BagInterface<String> bag3 = bag1.union(bag2);
         displayBag(bag3);
-        System.out.println();
 
         System.out.println("\nbag4, test the method intersection of bag1 and bag2:");
         BagInterface<String> bag4 = bag1.intersection(bag2);
         displayBag(bag4);
-        System.out.println();
 
         System.out.println("\nbag5, test the method difference of bag1 and bag2:");
         BagInterface<String> bag5 = bag1.difference(bag2);
