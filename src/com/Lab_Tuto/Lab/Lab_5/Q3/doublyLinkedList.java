@@ -56,24 +56,18 @@ public class doublyLinkedList<E> {
             throw new IndexOutOfBoundsException("Out of index");
         else if (index == 0)
             addFirst(e);
-        else if (index == size - 1)
+        else if (index == size)
             addLast(e);
         else {
             Node<E> current = head;
-            for (int i = 1; i < index; i++) {
-                current = current.next;      // one node before the index
+            for (int i = 0; i < index; i++) {
+                current = current.next;
             }
-            Node<E> newNode = new Node<>(e, current.next, current);
-            current.next.prev = newNode;
-            current.next = newNode;
+            Node<E> newNode = new Node<>(e, current, current.prev);
+            current.prev.next = newNode;
+            current.prev = newNode;
             size++;
-//            for (int i = 0; i < index; i++) {
-//                current = current.next;
-//            }
-//            Node<E> newNode = new Node<E>(e, current, current.prev);
-//            current.prev.next = newNode;
-//            current.prev = newNode;
-//            size++;
+            System.out.println("adding at index " + index + ": " + e);
         }
     }
 
@@ -137,7 +131,7 @@ public class doublyLinkedList<E> {
         System.out.println("iterate backward...");
         Node<E> current = tail;
         while (current != null) {
-            System.out.print(tail.element + " ");
+            System.out.print(current.element + " ");
             current = current.prev;
         }
     }

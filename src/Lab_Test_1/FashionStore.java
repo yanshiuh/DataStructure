@@ -41,3 +41,4 @@ public class FashionStore extends ShopLot implements Comparable<FashionStore> {
         return result;
     }
 }
+

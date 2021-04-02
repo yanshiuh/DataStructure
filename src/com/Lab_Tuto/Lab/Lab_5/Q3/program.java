@@ -8,7 +8,7 @@ public class program {
         list.addLast(10);
         list.addLast(100);
         list.add(2, 2);
-        //list.remove(3);
+        list.remove(3);
 
         System.out.println();
         list.iterateForward();

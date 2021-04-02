@@ -25,3 +25,4 @@ public class ShopLot<S extends Comparable<S>>  {
         return this.person.name.equals(other.person.name);
     }
 }
+

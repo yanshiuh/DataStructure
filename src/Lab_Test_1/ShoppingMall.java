@@ -15,26 +15,26 @@ public class ShoppingMall {
         List<FoodStore> foodStores = new ArrayList<>();
 
         // mcd
-        shopName      = "McDonalds";
-        person        = new Person("Mike", "0101122334");
-        employees     = new Person[]{new Person("Jack", null), new Person("Jane", null)};
-        items         = new Item[]{new Item<>("Burger", 10), new Item<>("Fried Chicken", 12)};
+        shopName = "McDonalds";
+        person = new Person("Mike", "0101122334");
+        employees = new Person[]{new Person("Jack", null), new Person("Jane", null)};
+        items = new Item[]{new Item<>("Burger", 10), new Item<>("Fried Chicken", 12)};
         FoodStore mcd = new FoodStore(shopName, person, employees, items);
         foodStores.add(mcd);
 
         // Sushi Mentai
-        shopName              = "Sushi Mentai";
-        person                = new Person("Max", "0112233445");
-        employees             = new Person[]{new Person("Adam", null), new Person("Alex", null), new Person("Andrew", null)};
-        items                 = new Item[]{new Item<>("Chicken Katsu Don", 15), new Item<>("Ramen", 12)};
+        shopName = "Sushi Mentai";
+        person = new Person("Max", "0112233445");
+        employees = new Person[]{new Person("Adam", null), new Person("Alex", null), new Person("Andrew", null)};
+        items = new Item[]{new Item<>("Chicken Katsu Don", 15), new Item<>("Ramen", 12)};
         FoodStore sushiMentai = new FoodStore(shopName, person, employees, items);
         foodStores.add(sushiMentai);
 
         // Waroeng Penyet
-        shopName                = "Waroeng Penyet";
-        person                  = new Person("Mike", "0101122334");
-        employees               = new Person[]{new Person("Lex", null), new Person("Leon", null)};
-        items                   = new Item[]{new Item<>("Ayam Penyet", 10)};
+        shopName = "Waroeng Penyet";
+        person = new Person("Mike", "0101122334");
+        employees = new Person[]{new Person("Lex", null), new Person("Leon", null)};
+        items = new Item[]{new Item<>("Ayam Penyet", 10)};
         FoodStore waroengPenyet = new FoodStore(shopName, person, employees, items);
         foodStores.add(waroengPenyet);
 
@@ -43,26 +43,26 @@ public class ShoppingMall {
         List<FashionStore> fashionStores = new ArrayList<>();
 
         // Uniqlo
-        shopName            = "Uniqlo";
-        person              = new Person("Nate", "0199988776S");
-        employees           = new Person[]{new Person("Kate", null), new Person("Ken", null), new Person("Kurt", null)};
-        items               = new Item[]{new Item<>("Shirt", 80), new Item<>("T-shirt", 60)};
+        shopName = "Uniqlo";
+        person = new Person("Nate", "0199988776S");
+        employees = new Person[]{new Person("Kate", null), new Person("Ken", null), new Person("Kurt", null)};
+        items = new Item[]{new Item<>("Shirt", 80), new Item<>("T-shirt", 60)};
         FashionStore uniqlo = new FashionStore(shopName, person, employees, items);
         fashionStores.add(uniqlo);
 
         // Padini
-        shopName            = "Padini";
-        person              = new Person("Nick", "0195544332");
-        employees           = new Person[]{new Person("Frank", null), new Person("Felix", null)};
-        items               = new Item[]{new Item<>("Blouse", 100), new Item<>("Skirt", 80)};
+        shopName = "Padini";
+        person = new Person("Nick", "0195544332");
+        employees = new Person[]{new Person("Frank", null), new Person("Felix", null)};
+        items = new Item[]{new Item<>("Blouse", 100), new Item<>("Skirt", 80)};
         FashionStore padini = new FashionStore(shopName, person, employees, items);
         fashionStores.add(padini);
 
         // Mango
-        shopName           = "Mango";
-        person             = new Person("Nicole", "0194433221");
-        employees          = new Person[]{new Person("Ron", null), new Person("John", null)};
-        items              = new Item[]{new Item<>("Dress", 120)};
+        shopName = "Mango";
+        person = new Person("Nicole", "0194433221");
+        employees = new Person[]{new Person("Ron", null), new Person("John", null)};
+        items = new Item[]{new Item<>("Dress", 120)};
         FashionStore mango = new FashionStore(shopName, person, employees, items);
         fashionStores.add(mango);
 
@@ -124,3 +124,4 @@ public class ShoppingMall {
         return expensive.item;
     }
 }
+
