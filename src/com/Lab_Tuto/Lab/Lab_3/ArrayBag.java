@@ -134,7 +134,7 @@ public class ArrayBag<T> implements BagInterface<T> {
         BagInterface<T> everything = new ArrayBag<>();
         T[] otherBagItems = otherBag.toArray();
 
-        for (int i = 0; i < numberOfEntries; i++) {
+        for (int i = 0; i < getCurrentSize(); i++) {
             everything.add(bag[i]);
         }
 
@@ -147,47 +147,74 @@ public class ArrayBag<T> implements BagInterface<T> {
 
     @Override
     public BagInterface<T> intersection(BagInterface<T> otherBag) {
-        List<T> list = new ArrayList<>();
-        T[] otherBagItems = otherBag.toArray();
-        for (int i = 0; i < numberOfEntries; i++) {
-            for (int j = 0; j < otherBagItems.length; j++) {
-                if (bag[i].equals(otherBagItems[j]) && !list.contains(bag[i])) {
-                    int frequency_1 = this.getFrequencyOf(bag[i]);
-                    int frequency_2 = otherBag.getFrequencyOf(otherBagItems[j]);
-                    int frequency = Math.min(frequency_1, frequency_2);
-
-                    for (int k = 0; k < frequency; k++) {
-                        list.add(bag[i]);
-                    }
+        ArrayBag<T> commonItems = new ArrayBag<>();
+        for (int i = 0; i < getCurrentSize(); i++) {
+            if (commonItems.contains(bag[i])) continue;
+            if (otherBag.contains(bag[i])) {
+                int count = Math.min(getFrequencyOf(bag[i]), otherBag.getFrequencyOf(bag[i]));
+                for (int j = 0; j < count; j++) {
+                    commonItems.add(bag[i]);
                 }
             }
         }
-
-        ArrayBag<T> commonItems = new ArrayBag<>();
-        for (int i = 0; i < list.size(); i++) {
-            commonItems.add(list.get(i));
-        }
-
         return commonItems;
+//        List<T> list = new ArrayList<>();
+//        T[] otherBagItems = otherBag.toArray();
+//        for (int i = 0; i < numberOfEntries; i++) {
+//            for (int j = 0; j < otherBagItems.length; j++) {
+//                if (bag[i].equals(otherBagItems[j]) && !list.contains(bag[i])) {
+//                    int frequency_1 = this.getFrequencyOf(bag[i]);
+//                    int frequency_2 = otherBag.getFrequencyOf(otherBagItems[j]);
+//                    int frequency = Math.min(frequency_1, frequency_2);
+//
+//                    for (int k = 0; k < frequency; k++) {
+//                        list.add(bag[i]);
+//                    }
+//                }
+//            }
+//        }
+//
+//        ArrayBag<T> commonItems = new ArrayBag<>();
+//        for (int i = 0; i < list.size(); i++) {
+//            commonItems.add(list.get(i));
+//        }
+//
+//        return commonItems;
     }
 
     @Override
     public BagInterface<T> difference(BagInterface<T> otherBag) {
-        T[] otherBagItems = otherBag.toArray();
-        for (int i = 0; i < numberOfEntries; i++) {
-            for (int j = 0; j < otherBagItems.length; j++) {
-                if (bag[i].equals(otherBagItems[j])) {
-                    this.remove(bag[i]);
-                    otherBag.remove(otherBagItems[j]);
+        BagInterface<T> leftOver = new ArrayBag<>();
+        for (int i = 0; i < getCurrentSize(); i++) {
+            if (leftOver.contains(bag[i])) continue;
+            if (!otherBag.contains(bag[i])) {
+                for (int j = 0; j < getFrequencyOf(bag[i]); j++) {
+                    leftOver.add(bag[i]);
+                }
+            } else {
+                int count1 = getFrequencyOf(bag[i]);
+                int count2 = getFrequencyOf(bag[i]);
+                for (int k = 0; k < Math.max(0, count1 - count2); k++) {
+                    leftOver.add(bag[i]);
                 }
             }
         }
-
-        ArrayBag<T> leftOver = new ArrayBag<>();
-        for (int i = 0; i < numberOfEntries; i++) {
-            leftOver.add(bag[i]);
-        }
-
         return leftOver;
+//        T[] otherBagItems = otherBag.toArray();
+//        for (int i = 0; i < numberOfEntries; i++) {
+//            for (int j = 0; j < otherBagItems.length; j++) {
+//                if (bag[i].equals(otherBagItems[j])) {
+//                    this.remove(bag[i]);
+//                    otherBag.remove(otherBagItems[j]);
+//                }
+//            }
+//        }
+//
+//        ArrayBag<T> leftOver = new ArrayBag<>();
+//        for (int i = 0; i < numberOfEntries; i++) {
+//            leftOver.add(bag[i]);
+//        }
+//
+//        return leftOver;
     }
 }

@@ -26,7 +26,7 @@ public class TestLinkedList {
         System.out.println("First element: " + a.getFirst());
         System.out.println("Last element: " + a.getLast());
 
-        System.out.println("Delete middle value, " + a.remove(count / 2)); // a.getMiddleValue()
+        System.out.println("Delete middle value, " + a.getMiddleValue()); // a.getMiddleValue()
 
         System.out.println("2nd and 3rd elements: " + a.get(2) + " , " + a.get(3));
 

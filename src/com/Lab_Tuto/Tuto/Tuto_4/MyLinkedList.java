@@ -122,6 +122,16 @@ public class MyLinkedList<E extends Comparable<E>> {
         return false;
     }
 
+    public boolean contains_2(E e) {
+        Node<E> current = head;
+        for (int i = 0; i < size; i++) {
+            if (current.element.equals(e))
+                return true;
+            current = current.next;
+        }
+        return false;
+    }
+
 
     // question 3
     // a) removeLast
@@ -136,7 +146,7 @@ public class MyLinkedList<E extends Comparable<E>> {
         } else {
             Node<E> pointer1 = head;
             for (int i = 1; i < size - 1; i++) {
-                pointer1 = pointer1.next;
+                pointer1 = pointer1.next;     // will stop one node before the tail
             }
             Node<E> temp = tail;
             tail = pointer1;

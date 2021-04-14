@@ -5,21 +5,40 @@ public class Q1<E> {
     private Node<E> tail;
     private int size;
 
-    // b) The purpose of this code is to set new element at the specified index of node
+    // b) The purpose of this code is to set new value at the specified index of node meanwhile return
+    //    the old value of the node
 
     public E xyz(int index, E e) {
         if (index == 0) {
+            Node<E> temp = head;
             head.element = e;
-            return head.element;
-        } else if (index >= size || index < 0) {
-            return null;
+            return temp.element;
         } else {
             Node<E> current = head;
-            for (int i = 1; i < index; i++) {
+            for (int i = 1; i < index; i++)
                 current = current.next;
-            }
+            Node<E> temp = current.next;
             current.next.element = e;
-            return current.next.element;
+            return temp.element;
         }
+    }
+
+    public E abc(int index, E e) {
+        if (index >= 0 && index < size) {
+            Node<E> current = head;
+            Node<E> temp;
+            for (int i = 0; i <= index; i++) {
+                if (index > 0) current = current.next;
+                else {
+                    temp = head;
+                    head.element = e;
+                    return temp.element;
+                }
+            }
+            temp = current.next;
+            current.next.element = e;
+            return temp.element;
+        }
+        return null;
     }
 }

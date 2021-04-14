@@ -122,8 +122,7 @@ public class MyLinkedList<E> {
     public boolean contains(E e) {
         Node<E> current = head;
         while (current != null) {
-            if (current.element.equals(e))
-                return true;
+            if (current.element.equals(e)) return true;
             current = current.next;
         }
         return false;
@@ -183,36 +182,29 @@ public class MyLinkedList<E> {
     }
 
     public int indexOf(E e) {
-        if (head != null) {
-            int count = 0;
-            Node<E> current = head;
-            while (current != null) {
-                if (current.element.equals(e))
-                    return count;
-                current = current.next;
-                count++;
-            }
-        } else {
-            System.out.println("List is empty");
+        int count = 0;
+        Node<E> current = head;
+        while (current != null) {
+            if (current.element.equals(e))
+                return count;
+            current = current.next;
+            count++;
         }
+        System.out.println("List is empty");
         return -1;
     }
 
     public int lastIndexOf(E e) {
-        if (head != null) {
-            List<Integer> occurrence = new ArrayList<>();
-            int count = 0;
-            Node<E> current = head;
-            while (current != null) {
-                if (current.element.equals(e))
-                    occurrence.add(count);
-                current = current.next;
-                count++;
-            }
-            return occurrence.get(occurrence.size() - 1);
-        } else
-            System.out.println("List is empty");
-        return -1;
+        List<Integer> occurrence = new ArrayList<>();
+        int count = 0;
+        Node<E> current = head;
+        while (current != null) {
+            if (current.element.equals(e))
+                occurrence.add(count);
+            current = current.next;
+            count++;
+        }
+        return occurrence.get(occurrence.size() - 1);
     }
 
     public E set(int index, E e) {
@@ -233,20 +225,22 @@ public class MyLinkedList<E> {
     }
 
     public void clear() {
-        if (size == 0)
-            System.out.println("List is empty");
-        else if (size == 1) {
-            head = tail = null;
-            size = 0;
-        } else {
-            Node<E> current = head;
-            while (current != null) {
-                Node<E> temp = current;
-                current = null;
-                size--;
-                current = temp.next;
-            }
-        }
+        head = tail = null;
+        size = 0;
+//        if (size == 0)
+//            System.out.println("List is empty");
+//        else if (size == 1) {
+//            head = tail = null;
+//            size = 0;
+//        } else {
+//            Node<E> current = head;
+//            while (current != null) {
+//                Node<E> temp = current;
+//                current = null;
+//                size--;
+//                current = temp.next;
+//            }
+//        }
     }
 
     public void print() {
@@ -255,6 +249,7 @@ public class MyLinkedList<E> {
             System.out.print(current.element + " ");
             current = current.next;
         }
+        System.out.println();
     }
 
     public void reverse() {
@@ -264,7 +259,7 @@ public class MyLinkedList<E> {
 
     public E getMiddleValue() {
         // 1st method
-        return get(size / 2);
+        return get(size / 2 );
 
         // 2nd method
 //        if (head != null) {
@@ -279,5 +274,14 @@ public class MyLinkedList<E> {
 //            System.out.println("List is empty");
 //            return null;
 //        }
+
+        // 3rd method
+//        int index = size / 2;
+//        Node<E> current = head;
+//        for (int i = 0; i < index; i++) {
+//            current = current.next;
+//        }
+//        Node<E> temp = current.next;
+//        return temp.element;
     }
 }

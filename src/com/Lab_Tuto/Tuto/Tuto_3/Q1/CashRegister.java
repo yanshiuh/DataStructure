@@ -3,9 +3,6 @@ package com.Lab_Tuto.Tuto.Tuto_3.Q1;
 public class CashRegister extends Dispenser {
     private double totalMoney, customerMoney, change;
 
-    public CashRegister() {
-    }
-
     public CashRegister(double totalMoney) {
         this.totalMoney = totalMoney;
     }
