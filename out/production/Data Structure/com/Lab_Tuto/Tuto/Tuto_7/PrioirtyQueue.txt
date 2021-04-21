@@ -1,0 +1,21 @@
+1. Queue is FIFO ordering data structure which means elements are appended to the end of the queue and
+   are removed from the beginning of the queue. In priority queue, elements are assigned with priorities.
+   When accessing elements, the element with the highest priority is removed first.
+
+2. - hospital queue where the patient with the most critical situation would be the first in the queue
+   -
+   -
+
+3.
+a) C++
+b) C++, Python, Java, Fortran
+c) Python, Java, Fortran
+d) Python, Fortran
+e) Priority queue contains Ruby or not?: false
+f) Value in array:
+   Value: Python
+   Value: Fortran
+
+4.
+a) use to compare the elements in the queue
+b) Jason, Ali, Muhammad

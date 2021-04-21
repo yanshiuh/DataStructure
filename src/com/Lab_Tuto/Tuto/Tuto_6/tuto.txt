@@ -1,0 +1,23 @@
+1. c. peek
+
+2. s1 :
+   s2 : one two
+   s3 : 
+
+3. 
+
+4.
+a) a b c * +
+b) a b * c d / -
+c) b c * d + e / a +
+
+5.
+a) (a + b) * c
+b) a * (b + c)
+
+6. c. infix to postfix
+
+
+
+
+
