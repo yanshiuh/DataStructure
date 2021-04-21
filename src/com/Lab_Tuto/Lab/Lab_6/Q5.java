@@ -39,9 +39,8 @@ public class Q5 {
         }
     }
 
-    public static <E> void display() {
+    public static void display() {
         for(int i = N - 1; i >= 0; i--) {
-            System.out.println("Step " + i);
             String d1 = " ", d2 = " ", d3 = " ";
             try {
                 d1 = String.valueOf(source.get(i));
