@@ -52,7 +52,7 @@ public class doublyLinkedList<E> {
     }
 
     public void add(int index, E e) {
-        if (index < 0 || index >= size)
+        if (index < 0 || index > size)
             throw new IndexOutOfBoundsException("Out of index");
         else if (index == 0)
             addFirst(e);

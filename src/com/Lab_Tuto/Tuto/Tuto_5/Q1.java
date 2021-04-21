@@ -5,8 +5,7 @@ public class Q1<E> {
     private Node<E> tail;
     private int size;
 
-    // b) The purpose of this code is to set new value at the specified index of node meanwhile return
-    //    the old value of the node
+    // b) replace any particular element in the linked list created with another element
 
     public E xyz(int index, E e) {
         if (index == 0) {
@@ -24,21 +23,16 @@ public class Q1<E> {
     }
 
     public E abc(int index, E e) {
-        if (index >= 0 && index < size) {
+        if (index >= size) {
+            // this.addLast(e);
+            return null;
+        } else {
             Node<E> current = head;
-            Node<E> temp;
-            for (int i = 0; i <= index; i++) {
-                if (index > 0) current = current.next;
-                else {
-                    temp = head;
-                    head.element = e;
-                    return temp.element;
-                }
-            }
-            temp = current.next;
-            current.next.element = e;
-            return temp.element;
+            for (int i = 0; i < index; i++)
+                current = current.next;
+            E element = current.element;
+            current.element = e;
+            return element;
         }
-        return null;
     }
 }

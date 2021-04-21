@@ -40,13 +40,9 @@ public class Stack<E> {
     }
 
     public int sum() {
-        List<Integer> numbers = new ArrayList<>();
-        for (int i = 0; i < list.size(); i++)
-            numbers.add((Integer) list.get(i));
-
         int sum = 0;
-        for(Integer num: numbers)
-            sum += num;
+        for (int i = 0; i < list.size(); i++)
+            sum += (Integer) list.get(i);
 
         return sum;
     }

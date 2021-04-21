@@ -28,6 +28,7 @@ public class SList<E> {
             SNode<E> temp = head;
             head = head.next;
             size--;
+            if (head == null) tail = null;
             return temp.element;
         }
     }
@@ -43,14 +44,9 @@ public class SList<E> {
     }
 
     public void clear() {
-        SNode<E> current = head;
-        while (current != null) {
-            SNode<E> temp = current;
-            current = null;
-            size--;
-            current = temp.next;
-        }
-        System.out.println("The list is empty now");
+        head = tail = null;
+        size = 0;
+        System.out.println("The list is empty");
     }
 
     public void display() {
