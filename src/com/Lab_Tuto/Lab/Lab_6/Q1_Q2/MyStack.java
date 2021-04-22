@@ -11,7 +11,10 @@ public class MyStack<E> {
     }
 
     public E pop() {
-        return list.remove(list.size() - 1);
+        if (!isEmpty())
+            return list.remove(list.size() - 1);
+        else
+            return null;
 
 //        E remove = list.get(list.size() - 1);
 //        list.remove(list.size() - 1);
@@ -19,7 +22,10 @@ public class MyStack<E> {
     }
 
     public E peek() {
-        return list.get(list.size() - 1);
+        if (!isEmpty())
+            return list.get(list.size() - 1);
+        else
+            return null;
     }
 
     public int getSize() {
