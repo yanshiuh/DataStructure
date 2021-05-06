@@ -16,7 +16,7 @@ public class Q2 {
         for (int i = 0; i < times; i++)
             queue.enqueue(s.charAt(i));
 
-        for (int i = s.length() - 1; i >= times ; i--) {
+        for (int i = s.length() - 1; i >= times - 1 ; i--) {
             if (queue.isEmpty()) break;
             else if (s.charAt(i) == queue.peek()) queue.dequeue();
         }

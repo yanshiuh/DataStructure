@@ -18,7 +18,7 @@ public class test {
         System.out.println("Cherry item: " + fruitQ.contains("Cherry"));
         System.out.println("Durian item: " + fruitQ.contains("Durian"));
 
-        if (!fruitQ.isEmpty())
-            System.out.println(fruitQ.toString());
+        while (!fruitQ.isEmpty())
+            System.out.print(fruitQ.dequeue() + " ");
     }
 }

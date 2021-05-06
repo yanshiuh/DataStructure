@@ -46,12 +46,11 @@ public class MyQueue<E extends Number> {
     }
 
     public void display(String queue) {
-        System.out.print("Queue for " + queue + ": { ");
+        System.out.print("Queue for " + queue + ": {");
         for (int i = 0 ; i < list.size(); i++) {
-            if (i == 0) System.out.print(list.get(i) + ", ");
-            else if (i == 1) System.out.print(list.get(i));
+            if (i == 0) System.out.print(list.get(i));
             else System.out.print(", " + list.get(i));
         }
-        System.out.print(" }");
+        System.out.print("}\n");
     }
 }
