@@ -1,6 +1,7 @@
 package Stack;
 
 import java.util.Stack;
+import java.io.*;
 
 public class Example {
 
@@ -14,6 +15,6 @@ public class Example {
 
         System.out.println(stack.peek());  // return last element
 
-        System.out.println(stack);
+        
     }
 }

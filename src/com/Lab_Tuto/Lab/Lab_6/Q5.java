@@ -29,12 +29,16 @@ public class Q5 {
         move(N, source, auxiliary, destination);
     }
 
+    // a to c using b
     public static <E> void move(int n, Stack<E> a, Stack<E> b, Stack<E> c) {
         if (n > 0) {
+            // move n-1 disc from A to B using C
             move(n - 1, a, c, b);
+            // move a disc from A to C
             E x = a.pop();
             c.push(x);
             display();
+            // move n-1 disc from B to C using A
             move(n - 1, b, a, c);
         }
     }
