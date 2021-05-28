@@ -1,0 +1,4 @@
+1. There is no condition when n = 0, and cause infinite loop.
+
+2. No parameter, unable to run the method
+
